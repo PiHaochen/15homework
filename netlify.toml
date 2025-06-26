@@ -1,5 +1,5 @@
 [build]
-  publish = "out"
+  publish = "/opt/build/repo/out"
   command = "npm run build"
 
 [build.environment]
