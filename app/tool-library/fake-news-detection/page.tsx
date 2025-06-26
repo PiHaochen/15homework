@@ -9,47 +9,38 @@ const detectionSteps = [
   {
     title: "Read past the headline",
     description: "Headlines are designed to grab attention, not always to inform accurately. Read the full article.",
-    icon: "📰",
   },
   {
     title: "Check what news outlet published it",
     description: "Look for established, credible news organizations with editorial standards.",
-    icon: "🏢",
   },
   {
     title: "Check the publish date and time",
     description: "Old news can be recycled to seem current. Verify when the story was actually published.",
-    icon: "📅",
   },
   {
     title: "Who is the author?",
     description: "Look for bylines and author credentials. Anonymous or fake authors are red flags.",
-    icon: "✍️",
   },
   {
     title: "Look at what sources and links are used",
     description: "Credible articles cite verifiable sources. Check if links actually support the claims.",
-    icon: "🔗",
   },
   {
     title: "Look out for questionable quotes and photos",
     description: "Verify quotes are real and in context. Check if photos match the story and timeframe.",
-    icon: "📸",
   },
   {
     title: "Be aware of confirmation bias",
     description: "We tend to believe information that confirms our existing beliefs. Stay objective.",
-    icon: "🧠",
   },
   {
     title: "Search if any other outlet is reporting this",
     description: "Major news should be covered by multiple credible sources. Single-source stories need scrutiny.",
-    icon: "🔍",
   },
   {
     title: "Think before you share",
     description: "Pause and verify before spreading information. You're responsible for what you share.",
-    icon: "⏸️",
   },
 ]
 
@@ -100,10 +91,7 @@ export default function FakeNewsDetectionPage() {
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center space-x-3 mb-3">
-                        <span className="text-2xl">{step.icon}</span>
-                        <h3 className="comic-text text-xl font-black">{step.title}</h3>
-                      </div>
+                      <h3 className="comic-text text-xl font-black mb-3">{step.title}</h3>
                       <p className="font-bold text-gray-700 leading-relaxed">{step.description}</p>
                     </div>
                   </div>

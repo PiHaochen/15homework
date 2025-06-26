@@ -128,14 +128,14 @@ export default function LanguageManipulationDetectionPage() {
             </h2>
             <div className="space-y-4">
               <div className="border-2 border-black p-4 bg-gray-50">
-                <h3 className="font-black mb-2">🛑 EMOTIONAL SPIKE DETECTION</h3>
+                <h3 className="font-black mb-2">EMOTIONAL SPIKE DETECTION</h3>
                 <p className="font-bold text-gray-700">
                   If a story sparks instant anger, fear or euphoria, stop scrolling and breathe. Emotional spikes are
                   prime entry points for manipulation.
                 </p>
               </div>
               <div className="border-2 border-black p-4 bg-gray-50">
-                <h3 className="font-black mb-2">🤔 ASK THE RIGHT QUESTION</h3>
+                <h3 className="font-black mb-2">ASK THE RIGHT QUESTION</h3>
                 <p className="font-bold text-gray-700">
                   "Who benefits if I react this way?" Traffic, donations, political clicks or product sales are common
                   motives.
@@ -157,25 +157,53 @@ export default function LanguageManipulationDetectionPage() {
           </div>
 
           <div className="comic-box bg-white p-8 mb-8">
+            <div className="mb-6">
+              <h4 className="comic-text text-lg font-black mb-4">WHY ARE THESE TACTICS PROBLEMATIC?</h4>
+              <div className="space-y-4">
+                <div className="p-4 bg-[#ff3a3a] bg-opacity-20 border-2 border-black">
+                  <h5 className="comic-text font-black mb-2">LACK OF SPECIFIC EVIDENCE</h5>
+                  <p className="font-bold text-sm">
+                    These statements are often vague and cannot provide specific data or verifiable sources.
+                  </p>
+                </div>
+                <div className="p-4 bg-[#ff9500] bg-opacity-20 border-2 border-black">
+                  <h5 className="comic-text font-black mb-2">APPEAL TO AUTHORITY FALLACY</h5>
+                  <p className="font-bold text-sm">
+                    Increases credibility by implying "inside information" or "expert opinions" that cannot actually be
+                    verified.
+                  </p>
+                </div>
+                <div className="p-4 bg-[#ff9500] bg-opacity-20 border-2 border-black">
+                  <h5 className="comic-text font-black mb-2">EMOTIONAL MANIPULATION</h5>
+                  <p className="font-bold text-sm">
+                    Uses words like "brainwashed" and "truth" to trigger emotional responses rather than rational
+                    thinking.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="comic-box bg-white p-8 mb-8">
             <h2 className="comic-text text-2xl font-black mb-6 flex items-center">
               <Shield className="w-8 h-8 mr-3 text-[#00c16e]" />
               BUILD YOUR DEFENSES
             </h2>
             <div className="space-y-4">
               <div className="border-2 border-black p-4 bg-[#00c16e] bg-opacity-20">
-                <h3 className="font-black mb-2">🛡️ PREBUNK & INOCULATE</h3>
+                <h3 className="font-black mb-2">PREBUNK AND INOCULATE</h3>
                 <p className="font-bold text-gray-700">
                   Expose yourself to mini versions of common hoaxes so you recognize them later.
                 </p>
               </div>
               <div className="border-2 border-black p-4 bg-[#3a66ff] bg-opacity-20">
-                <h3 className="font-black mb-2">📚 USE FACT-CHECK TOOLS</h3>
+                <h3 className="font-black mb-2">USE FACT-CHECK TOOLS</h3>
                 <p className="font-bold text-gray-700">
                   Many hoaxes are annual re-runs. Reputable fact-check tools can quickly identify recycled content.
                 </p>
               </div>
               <div className="border-2 border-black p-4 bg-[#ff9500] bg-opacity-20">
-                <h3 className="font-black mb-2">⏰ LIMIT DOOM-SCROLLING</h3>
+                <h3 className="font-black mb-2">LIMIT DOOM-SCROLLING</h3>
                 <p className="font-bold text-gray-700">
                   Prolonged exposure to sensational feeds raises anxiety and lowers judgment. Curate trusted sources.
                 </p>

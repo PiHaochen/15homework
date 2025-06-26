@@ -42,17 +42,14 @@ const aiTropes = [
   {
     title: "Too-Perfect Portraits",
     description: "Fashion and fantasy portraits with wax-smooth skin and cinematic lighting",
-    warning: "🎭",
   },
   {
     title: "Retro Hoaxes",
     description: "Fake black-and-white shots of modern gadgets or historical leaders",
-    warning: "📸",
   },
   {
     title: "Hyper-Emotional Scenes",
     description: "Disaster or protest scenes designed to provoke outrage or sympathy",
-    warning: "😱",
   },
 ]
 
@@ -162,14 +159,14 @@ export default function AIImageDetectionPage() {
             <h2 className="comic-text text-2xl font-black mb-6">CONTEXT & PLAUSIBILITY SCAN</h2>
             <div className="space-y-4">
               <div className="border-2 border-black p-4 bg-[#3a66ff] bg-opacity-20">
-                <h3 className="font-black mb-2">🤔 ASK "COULD THIS REALLY HAPPEN?"</h3>
+                <h3 className="font-black mb-2">ASK "COULD THIS REALLY HAPPEN?"</h3>
                 <p className="font-bold text-gray-700">
                   Seasonal clothing, architecture, license plates, weather, and event timeline should all align with the
                   claimed context.
                 </p>
               </div>
               <div className="border-2 border-black p-4 bg-[#ff9500] bg-opacity-20">
-                <h3 className="font-black mb-2">📰 DOUBLE-SOURCE BIG CLAIMS</h3>
+                <h3 className="font-black mb-2">DOUBLE-SOURCE BIG CLAIMS</h3>
                 <p className="font-bold text-gray-700">
                   Look for a second reputable outlet or official statement that matches the visual evidence.
                 </p>
@@ -183,7 +180,6 @@ export default function AIImageDetectionPage() {
               {aiTropes.map((trope, index) => (
                 <div key={index} className="border-2 border-black p-4 bg-gray-50">
                   <div className="flex items-start space-x-3">
-                    <span className="text-2xl">{trope.warning}</span>
                     <div>
                       <h3 className="font-black mb-2">{trope.title}</h3>
                       <p className="font-bold text-gray-700">{trope.description}</p>

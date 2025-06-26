@@ -119,7 +119,7 @@ export default function ImageDetectionPage() {
                   {index === 0 && (
                     <div className="mt-6 space-y-4">
                       <div className="border-2 border-black p-4 bg-gray-50">
-                        <h3 className="font-black mb-2">🔍 INSPECTION CHECKLIST</h3>
+                        <h3 className="font-black mb-2">INSPECTION CHECKLIST</h3>
                         <ul className="space-y-2">
                           <li className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-black"></div>
@@ -141,7 +141,7 @@ export default function ImageDetectionPage() {
                   {index === 1 && (
                     <div className="mt-6 space-y-4">
                       <div className="border-2 border-black p-4 bg-gray-50">
-                        <h3 className="font-black mb-2">🔄 REVERSE SEARCH PROCESS</h3>
+                        <h3 className="font-black mb-2">REVERSE SEARCH PROCESS</h3>
                         <ol className="space-y-2">
                           <li className="flex items-start space-x-2">
                             <span className="font-black">1.</span>
@@ -167,7 +167,7 @@ export default function ImageDetectionPage() {
                   {index === 2 && (
                     <div className="mt-6 space-y-4">
                       <div className="border-2 border-black p-4 bg-gray-50">
-                        <h3 className="font-black mb-2">📊 METADATA ANALYSIS</h3>
+                        <h3 className="font-black mb-2">METADATA ANALYSIS</h3>
                         <ul className="space-y-2">
                           <li className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-black"></div>
@@ -189,7 +189,7 @@ export default function ImageDetectionPage() {
                   {index === 3 && (
                     <div className="mt-6 space-y-4">
                       <div className="border-2 border-black p-4 bg-gray-50">
-                        <h3 className="font-black mb-2">🌍 GEOLOCATION TECHNIQUES</h3>
+                        <h3 className="font-black mb-2">GEOLOCATION TECHNIQUES</h3>
                         <ul className="space-y-2">
                           <li className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-black"></div>
@@ -220,13 +220,13 @@ export default function ImageDetectionPage() {
             <h2 className="comic-text text-2xl font-black mb-6">CROPPING & COMPOSITION TRICKS</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border-2 border-black p-4 bg-[#ff3a3a] bg-opacity-20">
-                <h3 className="font-black mb-2">🖼️ TIGHT CROPS</h3>
+                <h3 className="font-black mb-2">TIGHT CROPS</h3>
                 <p className="font-bold text-gray-700">
                   Look for tight crops that hide key context like police patches, protest banners, or brand logos.
                 </p>
               </div>
               <div className="border-2 border-black p-4 bg-[#ff9500] bg-opacity-20">
-                <h3 className="font-black mb-2">👥 CROWD MANIPULATION</h3>
+                <h3 className="font-black mb-2">CROWD MANIPULATION</h3>
                 <p className="font-bold text-gray-700">
                   High share counts don't equal authenticity. Viral reposts often revive old disaster photos.
                 </p>
