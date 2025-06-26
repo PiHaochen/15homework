@@ -46,7 +46,7 @@ const analysisResults = [
     range: [9, 12],
     title: "EASILY INFLUENCED",
     description:
-      "You may be easily convinced by fake expert tactics. Recommend learning more media literacy knowledge to improve information discrimination ability.",
+      "You may be easily convinced by fake expert tactics. Recommend learning more media literacy knowledge to improve information recognition ability.",
     color: "text-[#ff9500]",
     bgColor: "bg-[#ff9500] bg-opacity-20 border-[#ff9500]",
   },

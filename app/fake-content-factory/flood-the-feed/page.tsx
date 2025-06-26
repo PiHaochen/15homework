@@ -448,7 +448,7 @@ const dialogueFlow: Record<string, DialogueStep> = {
     id: "show_consequences",
     type: "complete",
     speaker: "system",
-    text: "You just controlled thousands of fake accounts to manipulate public opinion and create real-world chaos. This is exactly how troll armies work - they make fringe opinions look mainstream and turn online lies into offline reality. Scary, isn't it?",
+    text: "", // Will be set dynamically
     options: [
       { text: "Try a different campaign", next: "campaign_choice" },
       { text: "Start over", next: "start" },
@@ -473,6 +473,22 @@ export default function FloodTheFeedPage() {
   }
 
   const currentDialogue = dialogueFlow[currentStep]
+
+  // Add dynamic text generation for the consequences step
+  if (currentStep === "show_consequences") {
+    const armySize = gameData.size
+    let armySizeText = "fake accounts"
+
+    if (armySize === "small") {
+      armySizeText = "hundreds of fake accounts"
+    } else if (armySize === "medium") {
+      armySizeText = "thousands of fake accounts"
+    } else if (armySize === "large") {
+      armySizeText = "tens of thousands of fake accounts"
+    }
+
+    currentDialogue.text = `You just controlled ${armySizeText} to manipulate public opinion and create real-world chaos. This is exactly how troll armies work - they make fringe opinions look mainstream and turn online lies into offline reality. Scary, isn't it?`
+  }
 
   return (
     <div className="min-h-screen comic-bg">

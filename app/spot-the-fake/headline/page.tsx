@@ -10,37 +10,137 @@ const headlineExamples = [
   {
     id: 1,
     headlines: [
-      "Research shows moderate exercise benefits health",
-      "SHOCKING! This food can make you 10 years younger!",
-      "New technology may improve energy efficiency",
-      "Experts recommend maintaining balanced diet",
+      "Biden addresses bipartisan infrastructure bill in Ohio",
+      "Senate advances voting rights legislation amid debate",
+      'Biden caught on hot mic: "I rigged the election" – full video',
+      "White House releases report on climate resilience funding",
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
-      "The second headline uses emotional words like 'SHOCKING!' and exaggerated claims like '10 years younger' to attract clicks.",
+      'This headline uses false accusations and "hot mic" framing to suggest authenticity without any source validation.',
     manipulationTechniques: [
-      "Emotional language: 'SHOCKING' triggers strong emotional response",
-      "Exaggerated claims: '10 years younger' lacks scientific basis",
-      "Excessive use of exclamation marks creates urgency",
-      "Vague 'this food' creates suspense",
+      '"Hot mic" framing: Suggests authenticity without source validation',
+      "False accusation: Implies electoral fraud with no evidence",
+      "Shock tactic: Aimed to provoke emotional outrage and virality",
     ],
   },
   {
     id: 2,
     headlines: [
-      "Climate change impact on agriculture study released",
-      "Government announces new education policy details",
-      "Weight loss secrets doctors don't want you to know! Click for truth",
-      "Tech company releases quarterly earnings report",
+      "US Treasury releases economic forecast",
+      "Stocks up slightly after Fed statement",
+      'White House insider reveals: "Everything is collapsing – prepare now!"',
+      "IMF updates global growth projections",
     ],
     correctAnswer: 2,
     explanation:
-      "The third headline uses conspiracy-style language and strong call-to-action to manipulate reader emotions.",
+      "This headline uses anonymous sourcing and apocalyptic framing to create exaggerated fear and urgency.",
     manipulationTechniques: [
-      "Conspiracy implication: 'doctors don't want you to know'",
-      "Mystery creation: 'secrets', 'truth' keywords",
-      "Direct call-to-action: 'Click for truth'",
-      "Creating opposition: implies doctors hide information",
+      'Anonymous sourcing: Uses vague attribution ("insider") to bypass accountability',
+      'Apocalyptic framing: "Everything is collapsing" creates exaggerated fear',
+      'Urgency pressure: "Prepare now!" demands immediate action and emotional reaction',
+      "False authority tone: Sounds like a credible leak, but lacks any verifiable source",
+    ],
+  },
+  {
+    id: 3,
+    headlines: [
+      "UN calls for immediate ceasefire in Gaza",
+      "Off-Screen Reality? Child Shown as Victim Later Seen Standing and Smiling",
+      "IDF confirms airstrike on Hamas tunnel system",
+      "Netanyahu meets US Secretary of State in Tel Aviv",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "This headline uses dehumanization tactics and selective framing to delegitimize suffering and undermine empathy.",
+    manipulationTechniques: [
+      "Dehumanization tactic: Portrays the child as a performer rather than a victim, aiming to delegitimize their suffering and undermine public empathy",
+      "Selective framing: Uses a brief, out-of-context clip to imply staging, while ignoring the broader context or aftermath of the incident",
+    ],
+  },
+  {
+    id: 4,
+    headlines: [
+      "CDC updates flu shot recommendations",
+      "Health experts warn of rising RSV cases",
+      "The vaccine killed my baby – what they're not telling you!",
+      "Pediatricians urge early vaccination for kids",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "This headline uses personal emotional appeal and conspiratorial accusations without any verification or sources.",
+    manipulationTechniques: [
+      "Personal emotional appeal: Uses tragedy to provoke fear and empathy",
+      'Conspiratorial accusation: "They\'re not telling you" implies intentional secrecy',
+      "Zero verification: No source, study, or authority supports the claim",
+      'Loaded language: "Killed" is a powerful accusation against vaccines',
+    ],
+  },
+  {
+    id: 5,
+    headlines: [
+      "IAEA warns of nuclear safety risks near Zaporizhzhia",
+      "Ukrainian forces reclaim villages near Kherson",
+      "Russia begins military withdrawal from northern front",
+      "Russia finds secret US biolabs in Ukraine, Pentagon confirms",
+    ],
+    correctAnswer: 3,
+    explanation:
+      "This headline revives conspiracy narratives and uses false attribution to justify military aggression.",
+    manipulationTechniques: [
+      "Conspiracy repackaging: Revives Cold War-era bioweapon narratives",
+      'Fear-based escalation: "Biolabs" used to justify military aggression',
+      "False attribution: Borrows legitimacy from the Pentagon",
+    ],
+  },
+  {
+    id: 6,
+    headlines: [
+      "Full Fact publishes 2023 transparency report",
+      "Reuters updates correction policy",
+      "Fact-checkers are secretly funded by global elites to silence you",
+      "Journalism nonprofit launches bias monitoring project",
+    ],
+    correctAnswer: 2,
+    explanation: "This headline constructs conspiracy theories about fact-checkers and exploits anti-media bias.",
+    manipulationTechniques: [
+      "Conspiracy theory construction: Accuses fact-checkers of hidden agendas",
+      'Vague villainization: "Global elites" is an undefined scapegoat',
+      'Victim framing: "To silence you" implies suppression of free speech',
+      "Anti-media bias exploitation: Plays on existing distrust in journalism",
+    ],
+  },
+  {
+    id: 7,
+    headlines: [
+      "Zuckerberg testifies before US Senate",
+      "Meta announces new child safety policy",
+      "Facebook is listening to your thoughts, whistleblower reveals",
+      "Scientific Report: Online privacy concerns growing",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "This headline claims impossible technological abilities and uses anonymous sources to exploit surveillance fears.",
+    manipulationTechniques: [
+      "Sci-fi distortion: Claims an impossible technological ability",
+      'Anonymous source: "Whistleblower" is undefined and unverifiable',
+      "Fear of surveillance: Exploits valid concerns to justify irrational claims",
+    ],
+  },
+  {
+    id: 8,
+    headlines: [
+      "France expands language support programs in schools",
+      "Interior Minister defends secularism in education policy",
+      "Paris announces new birth registration system update",
+      "France moves to restrict Muslim baby names under new civil code change",
+    ],
+    correctAnswer: 3,
+    explanation:
+      "This headline uses bureaucratic framing and fear amplification to spark alarm about cultural discrimination.",
+    manipulationTechniques: [
+      'Bureaucratic framing: Phrases like "civil code change" evoke government authority, creating a false sense of credibility',
+      "Fear amplification: Designed to spark alarm about state-driven cultural erasure and discrimination",
     ],
   },
 ]

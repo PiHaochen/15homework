@@ -325,7 +325,9 @@ export default function BuildNewsTrapPage() {
           {currentDialogue.showWebsite && currentDialogue.websiteData && (
             <div className="comic-box bg-white p-6 mb-8">
               <div className="bg-[#1a1a1a] text-white p-4 mb-4 border-2 border-black">
-                <h3 className="comic-text text-xl font-black text-center">{currentDialogue.websiteData.name}</h3>
+                <h3 className="comic-text text-xl font-black text-center">
+                  {gameData.website || currentDialogue.websiteData.name}
+                </h3>
                 <p className="text-center text-sm">Breaking News • Independent Journalism</p>
               </div>
               <div className="border-2 border-black p-6 bg-gray-50">

@@ -10,7 +10,6 @@ import {
   ComicBookIcon,
   ComicUsersIcon,
   ComicFileIcon,
-  ComicChevronRightIcon,
   ComicPlayIcon,
 } from "@/components/comic-icons"
 import { VenetianMaskIcon as Mask } from "lucide-react"
@@ -89,7 +88,7 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-6 relative">
+      <section className="py-12 px-6 relative">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <div className="mb-8">
@@ -106,15 +105,6 @@ export default function HomePage() {
                 <div className="comic-highlight-alt inline-block text-xl font-black">Know Wiser Now</div>
               </div>
             </div>
-
-            <Link href="/challenges">
-              <Button size="lg" className="comic-button bg-[#ff3a3a] text-white border-black px-8 py-6 text-xl">
-                <span className="flex items-center">
-                  START EXPLORING
-                  <ComicChevronRightIcon className="ml-2 w-6 h-6" />
-                </span>
-              </Button>
-            </Link>
           </div>
         </div>
 
@@ -127,10 +117,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Preview Modules */}
-      <section className="py-20 px-6">
+      {/* Game Modules */}
+      <section className="py-12 px-6">
         <div className="container mx-auto">
-          <div className="mb-12">
+          <div className="mb-8">
             <div className="inline-block comic-box-accent">
               <h3 className="comic-text text-4xl bg-[#ff3a3a] text-white px-6 py-3 border-4 border-black">
                 GAME MODULES

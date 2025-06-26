@@ -3,132 +3,172 @@
 import { useState } from "react"
 import { GameHeader } from "@/components/game-header"
 import { Button } from "@/components/ui/button"
-import { TrendingUp, Brain, AlertTriangle, Shield, RotateCcw } from "lucide-react"
+import { TrendingUp, Brain, AlertTriangle } from "lucide-react"
 
-const contentOptions = [
-  {
-    id: 1,
-    title: "SHOCKING! Major COVID Outbreak in Downtown Area - Officials Silent!",
-    type: "Emotional Post",
-    engagement: 95,
-    healthScore: 20,
-    polarization: 80,
-    description: "High interaction but creates panic",
-  },
-  {
-    id: 2,
-    title: "Celebrity Reveals Vaccine Conspiracy - What They're Hiding From You",
-    type: "Fake News",
-    engagement: 90,
-    healthScore: 10,
-    polarization: 90,
-    description: "High clicks but completely false",
-  },
-  {
-    id: 3,
-    title: "CDC Analysis: Latest Vaccine Safety Data and Effectiveness Rates",
-    type: "Rational Content",
-    engagement: 30,
-    healthScore: 95,
-    polarization: 10,
-    description: "Low interaction but factual",
-  },
-  {
-    id: 4,
-    title: "The Truth About Big Pharma They Don't Want You to Know...",
-    type: "Conspiracy Theory",
-    engagement: 85,
-    healthScore: 15,
-    polarization: 95,
-    description: "Extremely engaging but divisive",
-  },
-  {
-    id: 5,
-    title: "Mayo Clinic Updates Treatment Protocol for Respiratory Conditions",
-    type: "Official News",
-    engagement: 25,
-    healthScore: 90,
-    polarization: 5,
-    description: "Boring but reliable",
-  },
-  {
-    id: 6,
-    title: "BREAKING: Leaked White House Documents Reveal Hidden Agenda",
-    type: "Sensational",
-    engagement: 88,
-    healthScore: 25,
-    polarization: 75,
-    description: "Viral potential but questionable",
-  },
-  {
-    id: 7,
-    title: "10 Reasons Why the Election Was Stolen - #6 Will Shock You!",
-    type: "Political Clickbait",
-    engagement: 92,
-    healthScore: 5,
-    polarization: 98,
-    description: "Extremely divisive content",
-  },
-  {
-    id: 8,
-    title: "New Study Links Common Food Additive to Cancer Risk",
-    type: "Health Scare",
-    engagement: 87,
-    healthScore: 40,
-    polarization: 60,
-    description: "Alarming but partially misleading",
-  },
-  {
-    id: 9,
-    title: "Local School Board Meeting Erupts Over Curriculum Debate",
-    type: "Local News",
-    engagement: 65,
-    healthScore: 75,
-    polarization: 50,
-    description: "Moderate engagement with factual basis",
-  },
-  {
-    id: 10,
-    title: "5G Towers Causing Mysterious Illness in Suburban Neighborhoods",
-    type: "Tech Conspiracy",
-    engagement: 82,
-    healthScore: 8,
-    polarization: 85,
-    description: "Technophobia with no scientific basis",
-  },
+const roundContent = [
+  // ROUND 1: AI & TECH PANIC
+  [
+    {
+      id: 1,
+      title: "Elon Musk Warns: AI Will Replace 80% of Jobs by 2026",
+      type: "Tech Drama",
+      engagement: 85,
+      healthScore: 35,
+      polarization: 70,
+      description: "Dramatic but taken out of context",
+    },
+    {
+      id: 2,
+      title: "Apple's New AI Glasses Will Scan Your Thoughts, Claims YouTuber",
+      type: "Tech Conspiracy",
+      engagement: 78,
+      healthScore: 12,
+      polarization: 85,
+      description: "No technical proof, high viewership",
+    },
+    {
+      id: 3,
+      title: "AI Can Now Detect Cancer in Early Stages – Peer-reviewed Study",
+      type: "Medical Research",
+      engagement: 40,
+      healthScore: 98,
+      polarization: 5,
+      description: "Backed by medical journals, low virality",
+    },
+  ],
+  // ROUND 2: CELEBRITY & INFLUENCER STORM
+  [
+    {
+      id: 4,
+      title: 'Pop Star Admits: "The Government Paid Me to Stay Silent"',
+      type: "Celebrity Drama",
+      engagement: 88,
+      healthScore: 10,
+      polarization: 92,
+      description: "Clickbait, completely unverified",
+    },
+    {
+      id: 5,
+      title: "#BreakTheSilence: Actor Speaks Out on Humanitarian Crisis",
+      type: "Activism",
+      engagement: 75,
+      healthScore: 50,
+      polarization: 60,
+      description: "Real statement, but some misinformation mixed in",
+    },
+    {
+      id: 6,
+      title: "Influencer Caught Faking Their Entire Travel Photos",
+      type: "Social Drama",
+      engagement: 70,
+      healthScore: 60,
+      polarization: 25,
+      description: "Mild drama, truth-based",
+    },
+  ],
+  // ROUND 3: WAR & GLOBAL CRISIS
+  [
+    {
+      id: 7,
+      title: "Secret NATO Files Leaked – Ukraine War Is a Lie?",
+      type: "War Conspiracy",
+      engagement: 89,
+      healthScore: 8,
+      polarization: 95,
+      description: "Viral on alt-platforms, proven false",
+    },
+    {
+      id: 8,
+      title: "Gaza Ceasefire Timeline Explained: What Happens Next",
+      type: "News Analysis",
+      engagement: 58,
+      healthScore: 90,
+      polarization: 40,
+      description: "Factual, but emotionally heavy topic",
+    },
+    {
+      id: 9,
+      title: '"I Lost My Family in the Strike" – Refugee Testimony Goes Viral',
+      type: "Human Interest",
+      engagement: 82,
+      healthScore: 65,
+      polarization: 75,
+      description: "Authentic, but lacks context & can spark outrage",
+    },
+  ],
+  // ROUND 4: HEALTH MYTHS & MIRACLES
+  [
+    {
+      id: 10,
+      title: "This Plant Cures Diabetes – Doctors Won't Tell You!",
+      type: "Health Misinformation",
+      engagement: 91,
+      healthScore: 5,
+      polarization: 88,
+      description: "Highly viral, no scientific backing",
+    },
+    {
+      id: 11,
+      title: "New Study Shows Sleep Is More Effective Than Any Pill",
+      type: "Health Science",
+      engagement: 65,
+      healthScore: 80,
+      polarization: 30,
+      description: "Backed by science, but often oversimplified online",
+    },
+    {
+      id: 12,
+      title: "COVID Vaccine Microchip Theory Finally Proven?",
+      type: "Conspiracy Theory",
+      engagement: 87,
+      healthScore: 3,
+      polarization: 90,
+      description: "Completely false, repeated hoax",
+    },
+  ],
+  // ROUND 5: POLITICS & DEMOCRACY UNDER FIRE
+  [
+    {
+      id: 13,
+      title: 'Voter Fraud Discovered in 12 States! "We Were Cheated!"',
+      type: "Election Conspiracy",
+      engagement: 86,
+      healthScore: 10,
+      polarization: 93,
+      description: "Viral narrative during elections, false claims",
+    },
+    {
+      id: 14,
+      title: "Your Rights Explained: What New Digital ID Means For You",
+      type: "Civic Education",
+      engagement: 52,
+      healthScore: 92,
+      polarization: 10,
+      description: "Fact-based explainer",
+    },
+    {
+      id: 15,
+      title: '"I Voted – But It Didn\'t Count" – TikTok Goes Viral',
+      type: "Viral Claim",
+      engagement: 75,
+      healthScore: 25,
+      polarization: 70,
+      description: "User-generated, unverifiable, widely shared",
+    },
+  ],
 ]
 
-const algorithmPersonalities = [
-  {
-    type: "BUBBLE CREATOR",
-    description: "High engagement but biased information",
-    condition: (engagement: number, health: number) => engagement > 70 && health < 50,
-    color: "bg-[#ff3a3a]",
-  },
-  {
-    type: "TRUTH GATEKEEPER",
-    description: "Sacrificed clicks for information quality",
-    condition: (engagement: number, health: number) => engagement < 50 && health > 70,
-    color: "bg-[#00c16e]",
-  },
-  {
-    type: "TOPIC HUNTER",
-    description: "Focused on viral spread above all",
-    condition: (engagement: number, health: number) => engagement > 80,
-    color: "bg-[#ff9500]",
-  },
-  {
-    type: "SLIPPERY SLOPE",
-    description: "Increasingly extreme recommendations",
-    condition: (engagement: number, health: number, polarization: number) => polarization > 70,
-    color: "bg-[#3a66ff]",
-  },
+const roundTitles = [
+  "AI & TECH PANIC",
+  "CELEBRITY & INFLUENCER STORM",
+  "WAR & GLOBAL CRISIS",
+  "HEALTH MYTHS & MIRACLES",
+  "POLITICS & DEMOCRACY UNDER FIRE",
 ]
 
 export default function AlgorithmJudgePage() {
   const [currentRound, setCurrentRound] = useState(1)
   const [selectedContent, setSelectedContent] = useState<number[]>([])
-  const [roundContent, setRoundContent] = useState(contentOptions.slice(0, 3))
   const [gameStats, setGameStats] = useState({
     totalEngagement: 0,
     totalHealth: 0,
@@ -137,6 +177,8 @@ export default function AlgorithmJudgePage() {
   })
   const [gameState, setGameState] = useState<"selecting" | "roundResult" | "finalResult">("selecting")
   const [roundStats, setRoundStats] = useState({ engagement: 0, health: 0, polarization: 0 })
+
+  const currentRoundContent = roundContent[currentRound - 1]
 
   const handleContentSelect = (contentId: number) => {
     if (selectedContent.includes(contentId)) {
@@ -147,7 +189,7 @@ export default function AlgorithmJudgePage() {
   }
 
   const submitRound = () => {
-    const selected = roundContent.filter((content) => selectedContent.includes(content.id))
+    const selected = currentRoundContent.filter((content) => selectedContent.includes(content.id))
     const engagement = selected.reduce((sum, content) => sum + content.engagement, 0) / selected.length || 0
     const health = selected.reduce((sum, content) => sum + content.healthScore, 0) / selected.length || 0
     const polarization = selected.reduce((sum, content) => sum + content.polarization, 0) / selected.length || 0
@@ -167,81 +209,17 @@ export default function AlgorithmJudgePage() {
     if (currentRound < 5) {
       setCurrentRound(currentRound + 1)
       setSelectedContent([])
-      setRoundContent(contentOptions.sort(() => Math.random() - 0.5).slice(0, 3))
       setGameState("selecting")
     } else {
-      setGameState("finalResult")
+      resetGame()
     }
   }
 
   const resetGame = () => {
     setCurrentRound(1)
     setSelectedContent([])
-    setRoundContent(contentOptions.slice(0, 3))
     setGameStats({ totalEngagement: 0, totalHealth: 0, totalPolarization: 0, rounds: 0 })
     setGameState("selecting")
-  }
-
-  const getPersonality = () => {
-    const avgEngagement = gameStats.totalEngagement / gameStats.rounds
-    const avgHealth = gameStats.totalHealth / gameStats.rounds
-    const avgPolarization = gameStats.totalPolarization / gameStats.rounds
-
-    return (
-      algorithmPersonalities.find((p) => p.condition(avgEngagement, avgHealth, avgPolarization)) ||
-      algorithmPersonalities[0]
-    )
-  }
-
-  if (gameState === "finalResult") {
-    const personality = getPersonality()
-    return (
-      <div className="min-h-screen comic-bg">
-        <GameHeader title="ALGORITHM JUDGE" subtitle="Final Results" backUrl="/scenario-game" />
-
-        <div className="container mx-auto px-4 py-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="comic-box bg-white p-8">
-              <div className="text-center mb-8">
-                <h2 className="comic-text text-4xl font-black mb-6">YOUR ALGORITHM PERSONALITY</h2>
-
-                <div className={`inline-block px-8 py-6 border-3 border-black ${personality.color} bg-opacity-20 mb-6`}>
-                  <h3 className="comic-text text-3xl font-black mb-3">{personality.type}</h3>
-                  <p className="text-xl font-bold">{personality.description}</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  <div className="comic-box bg-[#ff9500] bg-opacity-20 border-2 border-black p-4">
-                    <TrendingUp className="w-8 h-8 mx-auto mb-2 text-[#ff9500]" />
-                    <h4 className="comic-text font-black mb-1">ENGAGEMENT</h4>
-                    <p className="text-2xl font-black">{Math.round(gameStats.totalEngagement / gameStats.rounds)}%</p>
-                  </div>
-
-                  <div className="comic-box bg-[#00c16e] bg-opacity-20 border-2 border-black p-4">
-                    <Shield className="w-8 h-8 mx-auto mb-2 text-[#00c16e]" />
-                    <h4 className="comic-text font-black mb-1">HEALTH</h4>
-                    <p className="text-2xl font-black">{Math.round(gameStats.totalHealth / gameStats.rounds)}%</p>
-                  </div>
-
-                  <div className="comic-box bg-[#ff3a3a] bg-opacity-20 border-2 border-black p-4">
-                    <AlertTriangle className="w-8 h-8 mx-auto mb-2 text-[#ff3a3a]" />
-                    <h4 className="comic-text font-black mb-1">POLARIZATION</h4>
-                    <p className="text-2xl font-black">{Math.round(gameStats.totalPolarization / gameStats.rounds)}%</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={resetGame} className="comic-button bg-black text-white">
-                  <RotateCcw className="w-4 h-4 mr-2" />
-                  PLAY AGAIN
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
   }
 
   if (gameState === "roundResult") {
@@ -276,7 +254,7 @@ export default function AlgorithmJudgePage() {
 
               <div className="text-center">
                 <Button onClick={nextRound} className="comic-button bg-black text-white text-lg px-8 py-3">
-                  {currentRound < 5 ? `NEXT ROUND (${currentRound + 1}/5)` : "VIEW FINAL RESULTS"}
+                  {currentRound < 5 ? `NEXT ROUND (${currentRound + 1}/5)` : "RESTART GAME"}
                 </Button>
               </div>
             </div>
@@ -290,7 +268,7 @@ export default function AlgorithmJudgePage() {
     <div className="min-h-screen comic-bg">
       <GameHeader
         title="ALGORITHM JUDGE"
-        subtitle={`Round ${currentRound}/5 - Select 1-2 content to recommend`}
+        subtitle={`Round ${currentRound}/5: ${roundTitles[currentRound - 1]} - Select 1-2 content to recommend`}
         backUrl="/scenario-game"
       />
 
@@ -305,7 +283,7 @@ export default function AlgorithmJudgePage() {
           </div>
 
           <div className="space-y-4 mb-6">
-            {roundContent.map((content) => (
+            {currentRoundContent.map((content) => (
               <div
                 key={content.id}
                 className={`p-6 border-3 border-black cursor-pointer transition-all ${
